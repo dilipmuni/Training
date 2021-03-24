@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        html,
+        body{
+            height: 100%;
+        }
+        .flex-fill {
+            flex:1;
+        }
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <script>
+                  var images = []
+         var no_of_prods = 6
+         var no_of_prods_per_page = 3
+         
+        calculate = function (){
+            // var p = document.getElementById("principal").value
+            // var i = document.getElementById("interest").value
+            // var n = document.getElementById("tenure").value
+            // var loan = {
+            //     principal: p,
+            //     interest: i,
+            //     tenure: n
+            // }
+            // if(p==""){
+            //     alert("Principal can not be empty")
+            // }
+
+
+            // // debugger
+            // // var total = loan["principal"]*loan["interest"]/100*loan["tenure"]
+            // var total = loan.principal*loan["interest"]/100*loan["tenure"]
+            // document.getElementById("result").innerText = total
+            // console.log("Principal " + p)
+
+
+            arr = [10,20,30,40]
+            for (var i=0; i<arr.length;i++){
+                console.log("i = " + i + " val "+ arr[i])
+            }
+            for (var i in arr){
+                console.log("i = " + i + " val "+ arr[i])
+            }
+            for (var v of arr){
+                console.log(" val "+ v)
+            }
+
+         };
+         function changeImage(){
+            var images = []
+         var no_of_prods = 6
+         var no_of_prods_per_page = 3
+         for (var i=0; i<no_of_prods; i++){
+             images[i] = "images/prod-"+(i+1)+".jpg";
+         }
+         for (var i=1; i<=no_of_prods_per_page; i++){
+            document.getElementById("img"+i).src=images[i]
+         }
+         }
+         function loadImage(){
+
+         for (var i=0; i<no_of_prods; i++){
+             images[i] = "images/prod-"+(i+1)+".jpg";
+         }
+         for (var i=1; i<=no_of_prods_per_page; i++){
+            document.getElementById("img"+i).src=images[i-1]
+         }
+         }
+         function loadPage(pageNo){ //2
+
+start = (pageNo * no_of_prods_per_page) - no_of_prods_per_page
+for (var i=0; i<no_of_prods_per_page; i++){
+   document.getElementById("img"+(i+1)).src=images[start+i] 
+}
+}
+    </script>
+<title>eKart</title>
+</head>
+<body onload="loadImage()">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+    <div class="container-fluid">
+    <div class="row flex-fill">
+        <div class="col-1 border border-primary" >Col1</div>
+        <div class="col-11 border border-primary">
+            <div class="row flex-fill">
+                <div class="col border border-primary">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" id ="img1"  alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col border border-primary">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" id ="img2"  alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                      </div>
+                </div>
+                <div class="col border border-primary">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" id ="img3" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="row ">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-end">
+                      <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1">Previous</a>
+                      </li>
+                      <li class="page-item"><a class="page-link" href="#">1</a></li>
+                      <li class="page-item"><a class="page-link" href="#">2</a></li>
+                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                      </li>
+                      <button id="test" class="button-info" onclick="loadPage(2)"> Test</button>
+                    </ul>
+                    
+                  </nav>
+            </div>
+
+        </div>
+    </div>
+  </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

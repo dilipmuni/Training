@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <script>
+         calculate = function (){
+             var p = document.getElementById("principal").value
+             var i = document.getElementById("interest").value
+             var n = document.getElementById("tenure").value
+             var loan = {
+                 principal: p,
+                interest: i,
+                tenure: n
+            }
+            if(p==""){
+                 alert("Principal can not be empty")
+             }
+
+
+            // // debugger
+            var total = loan["principal"]*loan["interest"]/100*loan["tenure"]
+             var total = loan.principal*loan["interest"]/100*loan["tenure"]
+             document.getElementById("result").innerText = total
+             console.log("Principal " + p)
+
+
+            /*arr = [10,20,30,40]
+            for (var i=0; i<arr.length;i++){
+                console.log("i = " + i + " val "+ arr[i])
+            }
+            for (var i in arr){
+                console.log("i = " + i + " val "+ arr[i])
+            }
+            for (var v of arr){
+                console.log(" val "+ v)
+            }
+            */
+
+         };
+    </script>
+<title>eKart</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row form-group">
+            <div class="col">
+            <label for="exampleInputEmail1">Principal</label>
+        </div>
+            <div class="col">
+                <input type="text" class="form-control" id="principal" aria-describedby="emailHelp" placeholder="Enter Principal">
+
+  </div>
+        </div>
+        <div class="row form-group">
+            <div class="col">
+            <label for="interest">Interest</label>
+        </div>
+            <div class="col">
+                <input type="email" class="form-control" id="interest" aria-describedby="emailHelp" placeholder="Enter Interest">
+
+  </div>
+        </div>
+        <div class="row form-group">
+            <div class="col">
+            <label for="tenure">Tenure</label>
+        </div>
+            <div class="col">
+                <input type="email" class="form-control" id="tenure" aria-describedby="emailHelp" placeholder="Enter tenure">
+
+  </div>
+        </div>
+        <div class="row form-group">
+            <div class="col">
+                <button type="button" id="sumbit" class="btn btn-primary" onclick="calculate()">Calculate</button>
+            </div>
+            <div class="col">
+                <span id="result">Resul  t</span>
+            </div>
+        </div>
+
+      </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
